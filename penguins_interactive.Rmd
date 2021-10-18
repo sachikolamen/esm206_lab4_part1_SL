@@ -5,10 +5,37 @@ date: "10/18/2021"
 output: html_document
 ---
 
-```{r setup, include=TRUE, messages = FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include = FALSE, messages = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE, messages = FALSE, warning = FALSE)
 library(plotly)
 library(DT)
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+#### Make a graph of penguins that is interactive
+
+```{r}
+penguins_graph <- ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(aes(color = species))
+
+penguins_graph # stored the graph under this object name, need to type object name to see graph
+
+```
+
+```{r}
+# Easily make plots interactive using `ggplotly()` Makes your HTML document interactive
+
+ggplotly(penguins_graph)
+```
+
+### Interactive Tables
+
+```{r}
+#DT package sands for data table. Makes your HTML interactive. Make an interactive table by: 
+
+datatable(penguins)
+```
+
+###
+
