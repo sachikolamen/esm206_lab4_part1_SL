@@ -1,0 +1,14 @@
+---
+title: "Interactive Penguins!"
+author: "Sachiko Lamen"
+date: "10/18/2021"
+output: html_document
+---
+
+```{r setup, include=TRUE, messages = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(DT)
+library(tidyverse)
+library(palmerpenguins)
+```
